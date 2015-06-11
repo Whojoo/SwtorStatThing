@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<abilities parse="http://parsely.io/parser/view/25661">
+	<baseArmorPenetration>0</baseArmorPenetration>
+	<!-- Only the values between tags is used. Attributes are for readability. -->
+	<!-- All Tech/Force abilities have an amountModifierPercent of -1. -->
+	<!-- multiplierAdditive need to be written as full percentage. -->
+	<!-- multiplierMultiplicative need to be written as 1 + (percent / 100) -->
+	<!-- contribution is how much % damage the ability contributed in a parse. -->
+	<ability>
+		<name>Lethal Shot</name>
+		<cooldown>1.5</cooldown>
+		<contribution>12.2</contribution>
+		<damage>
+			<tick type="ranged">
+				<coefficient>0.988</coefficient>
+				<amountModifierPercent>-0.34</amountModifierPercent>
+				<stdHealthMin>0.099</stdHealthMin>
+				<stdHealthMax>0.099</stdHealthMax>
+				<multiplierAdditive>
+					<value type="ranged_bonus">5</value>
+					<value type="dicipline_bonus">5</value>
+				</multiplierAdditive>
+				<multiplierMultiplicative>
+				</multiplierMultiplicative>
+				<surgeBonus>0</surgeBonus>
+				<critBonus>0</critBonus>
+				<armorPenetration>0</armorPenetration>
+			</tick>
+			<tick type="internal">
+				<coefficient>0.77</coefficient>
+				<amountModifierPercent>-1</amountModifierPercent>
+				<stdHealthMin>0.077</stdHealthMin>
+				<stdHealthMax>0.077</stdHealthMax>
+				<multiplierAdditive>
+					<value type="tech_bonus">5</value>
+					<value type="dicipline_bonus">5</value>
+					<value type="internal_bonus">7</value>
+				</multiplierAdditive>
+				<multiplierMultiplicative>
+				</multiplierMultiplicative>
+				<surgeBonus>0</surgeBonus>
+				<critBonus>0</critBonus>
+				<armorPenetration>100</armorPenetration>
+			</tick>
+		</damage>
+	</ability>
+	<ability>
+		<name>Takedown</name>
+		<cooldown>9</cooldown>
+		<contribution>7.4</contribution>
+		<damage>
+			<tick type="ranged">
+				<coefficient>2.51</coefficient>
+				<amountModifierPercent>0.67</amountModifierPercent>
+				<stdHealthMin>0.251</stdHealthMin>
+				<stdHealthMax>0.251</stdHealthMax>
+				<multiplierAdditive>
+					<value type="ranged_bonus">5</value>
+				</multiplierAdditive>
+				<multiplierMultiplicative>
+				</multiplierMultiplicative>
+				<surgeBonus>0</surgeBonus>
+				<critBonus>0</critBonus>
+				<armorPenetration>0</armorPenetration>
+			</tick>
+		</damage>
+	</ability>
+	<ability>
+		<name>Cull</name>
+		<cooldown>9</cooldown>
+		<contribution>20.0</contribution>
+		<damage>
+			<tick type="ranged">
+				<coefficient>0.805</coefficient>
+				<amountModifierPercent>-0.46</amountModifierPercent>
+				<stdHealthMin>0.081</stdHealthMin>
+				<stdHealthMax>0.081</stdHealthMax>
+				<multiplierAdditive>
+					<value type="ranged_bonus">5</value>
+					<value type="dicipline_bonus">5</value>
+				</multiplierAdditive>
+				<multiplierMultiplicative>
+					<value type="ticks">4</value>
+				</multiplierMultiplicative>
+				<surgeBonus>0</surgeBonus>
+				<critBonus>40</critBonus>
+				<armorPenetration>0</armorPenetration>
+			</tick>
+		</damage>
+	</ability>
+	<ability>
+		<name>Series of Shots</name>
+		<cooldown>12</cooldown>
+		<contribution>9.4</contribution>
+		<damage>
+			<tick type="ranged">
+				<coefficient>0.93</coefficient>
+				<amountModifierPercent>-0.38</amountModifierPercent>
+				<stdHealthMin>0.093</stdHealthMin>
+				<stdHealthMax>0.093</stdHealthMax>
+				<multiplierAdditive>
+					<value type="ranged_bonus">5</value>
+					<value type="dicipline_bonus">5</value>
+				</multiplierAdditive>
+				<multiplierMultiplicative>
+					<value type="ticks">4</value>
+				</multiplierMultiplicative>
+				<surgeBonus>0</surgeBonus>
+				<critBonus>10</critBonus>
+				<armorPenetration>0</armorPenetration>
+			</tick>
+		</damage>
+	</ability>
+	<ability>
+		<name>Weakening Blast</name>
+		<cooldown>18</cooldown>
+		<contribution>7.9</contribution>
+		<damage>
+			<tick type="ranged">
+				<coefficient>0.153</coefficient>
+				<amountModifierPercent>-0.9</amountModifierPercent>
+				<stdHealthMin>0.0153</stdHealthMin>
+				<stdHealthMax>0.0153</stdHealthMax>
+				<multiplierAdditive>
+					<value type="ranged_bonus">5</value>
+				</multiplierAdditive>
+				<multiplierMultiplicative>
+				</multiplierMultiplicative>
+				<surgeBonus>0</surgeBonus>
+				<critBonus>10</critBonus>
+				<armorPenetration>0</armorPenetration>
+			</tick>
+		</damage>
+	</ability>
+	<ability>
+		<name>Rifle Shot</name>
+		<cooldown>1.5</cooldown>
+		<contribution>1.5</contribution>
+		<damage>
+			<tick type="ranged">
+				<coefficient>0.5</coefficient>
+				<amountModifierPercent>-0.5</amountModifierPercent>
+				<stdHealthMin>0.0</stdHealthMin>
+				<stdHealthMax>0.0</stdHealthMax>
+				<multiplierAdditive>
+					<value type="ranged_bonus">5</value>
+				</multiplierAdditive>
+				<multiplierMultiplicative>
+					<value type="ticks">2</value>
+					<value type="resist_chance">0.9</value>
+				</multiplierMultiplicative>
+				<surgeBonus>0</surgeBonus>
+				<critBonus>0</critBonus>
+				<armorPenetration>0</armorPenetration>
+			</tick>
+		</damage>
+	</ability>
+	<ability>
+		<name>Corrosive Dart</name>
+		<!-- Applied every 27 seconds -->
+		<cooldown>27</cooldown>
+		<contribution>19.8</contribution>
+		<damage>
+			<tick type="internal">
+				<coefficient>0.3075</coefficient>
+				<amountModifierPercent>-1</amountModifierPercent>
+				<stdHealthMin>0.03075</stdHealthMin>
+				<stdHealthMax>0.03075</stdHealthMax>
+				<multiplierAdditive>
+					<value type="tech_bonus">5</value>
+					<value type="internal_bonus">7</value>
+				</multiplierAdditive>
+				<multiplierMultiplicative>
+					<value type="ticks">9</value>
+					<value type="double_tick_chance">1.15</value>
+				</multiplierMultiplicative>
+				<surgeBonus>0</surgeBonus>
+				<critBonus>10</critBonus>
+				<armorPenetration>100</armorPenetration>
+			</tick>
+		</damage>
+	</ability>
+	<ability>
+		<name>Corrosive Grenade</name>
+		<!-- Applied every 27 seconds -->
+		<cooldown>27</cooldown>
+		<contribution>20.3</contribution>
+		<damage>
+			<tick type="internal">
+				<coefficient>0.3</coefficient>
+				<amountModifierPercent>-1</amountModifierPercent>
+				<stdHealthMin>0.027</stdHealthMin>
+				<stdHealthMax>0.027</stdHealthMax>
+				<multiplierAdditive>
+					<value type="tech_bonus">5</value>
+					<value type="internal_bonus">7</value>
+				</multiplierAdditive>
+				<multiplierMultiplicative>
+					<value type="ticks">9</value>
+					<value type="aoe_bonus">1.1</value>
+				</multiplierMultiplicative>
+				<surgeBonus>0</surgeBonus>
+				<critBonus>10</critBonus>
+				<armorPenetration>100</armorPenetration>
+			</tick>
+		</damage>
+	</ability>
+</abilities>

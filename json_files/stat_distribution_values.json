@@ -1,0 +1,45 @@
+{
+	"gear_levels": [
+		{
+			"level": 192,
+			"main": 4802390,
+			"secundairy": 4238907432,
+			"tertiary": 4892374,
+			"mod":
+			{
+				"main": 111,
+				"secundairy": 82
+			},
+			"enhancement":
+			{
+				"secundairy": 74,
+				"tertiary": 111
+			},
+			"implant":
+			{
+				"main": 111,
+				"secundairy": 162,
+				"tertiary": 111
+			}
+		},
+		{
+			"level": 198,
+			"mod":
+			{
+				"main": 111,
+				"secundairy": 82
+			},
+			"enhancement":
+			{
+				"secundairy": 74,
+				"tertiary": 111
+			},
+			"implant":
+			{
+				"main": 111,
+				"secundairy": 162,
+				"tertiary": 111
+			}
+		}
+	]
+}

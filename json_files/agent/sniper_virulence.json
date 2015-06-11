@@ -1,0 +1,39 @@
+{
+	"abilities": [
+		{
+			"name": "lethal_shot",
+			"cooldown": "1,5",
+			"damage": [
+				{
+					"coefficient": "0,988",
+					"amount_modifier_percent": "-0,340",
+					"standard_health_min": "0,099",
+					"standard_health_max": "0,099",
+					"damage_bonus": null,
+					"multiplier_additive": [
+						"1,05"
+					],
+					"multiplier_multiplicative": null,
+					"surge_bonus": "0",
+					"crit_bonus": "0",
+					"armor_penetration": "0"
+				},
+				{
+					"coefficient": "0,988",
+					"amount_modifier_percent": "-0,340",
+					"standard_health_min": "0,099",
+					"standard_health_max": "0,099",
+					"damage_bonus": null,
+					"multiplier_additive": [
+						"1,05",
+						"1,07"
+					],
+					"multiplier_multiplicative": null,
+					"surge_bonus": "0",
+					"crit_bonus": "0",
+					"armor_penetration": "100"
+				}
+			]
+		}
+	]
+}
