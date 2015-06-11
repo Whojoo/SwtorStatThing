@@ -6,18 +6,14 @@
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
-#include <iostream>
-#include <json/json.h>
-#include <pugixml.hpp>
-
 #include "functions.h"
-#include "XmlConstants.h"
 
-#define Virulence "xml_files/sniper/virulence.xml"
+#define VirulencePath "xml_files/sniper/virulence.xml"
+#define Virulence "Virulence"
 
 int main()
 {
-	Start(Virulence);
+	Start(VirulencePath, Virulence, eWeapon_Sniper);
 
 	return 0;
 }

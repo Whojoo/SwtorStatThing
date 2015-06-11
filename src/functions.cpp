@@ -5,28 +5,26 @@
  *      Author: Robin
  */
 
-#include <iostream>
-
 #include "functions.h"
-#include "Ability.h"
+
+#include <pugixml.hpp>
+
 #include "XmlConstants.h"
 
-void Start(const char* aPath)
+void Start(const char* aPath, const char* aDiciplineName, eWeaponType weapon)
 {
 	pugi::xml_document doc;
 	doc.load_file(aPath);
 
 	//Load all the abilities.
-	abilityList list = LoadAbilities(doc.child(Abilities));
+	abilityVec list = LoadAbilities(doc.child(Abilities));
 
-	//Test if everything went according to plan.
-	for (abilityList::iterator it = list.begin(); it != list.end(); ++it)
-		std::cout << it->First()->coefficient << std::endl;
+
 }
 
-abilityList LoadAbilities(pugi::xml_node aParentNode)
+abilityVec LoadAbilities(pugi::xml_node aParentNode)
 {
-	abilityList list;
+	abilityVec list;
 
 	for (pugi::xml_node abilityNode = aParentNode.first_child(); abilityNode; abilityNode = abilityNode.next_sibling())
 	{
