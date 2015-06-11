@@ -20,8 +20,8 @@ void Start(const char* aPath)
 	abilityList list = LoadAbilities(doc.child(Abilities));
 
 	//Test if everything went according to plan.
-//	for (abilityList::iterator it = list.begin(); it != list.end(); ++it)
-//		std::cout << it->First()->coefficient << std::endl;
+	for (abilityList::iterator it = list.begin(); it != list.end(); ++it)
+		std::cout << it->First()->coefficient << std::endl;
 }
 
 abilityList LoadAbilities(pugi::xml_node aParentNode)
@@ -38,10 +38,9 @@ abilityList LoadAbilities(pugi::xml_node aParentNode)
 				abilityNode.child(Cooldown).text().as_double(), name);
 
 		//Now add each tick to ability.
-		for (pugi::xml_node tickNode = aParentNode.child(Damage).first_child(); tickNode; tickNode = tickNode.next_sibling())
+		for (pugi::xml_node tickNode = abilityNode.child(Damage).first_child(); tickNode; tickNode = tickNode.next_sibling())
 		{
 			double coefficient = GetDoubleFromNode(Coefficient, tickNode);
-			std::cout << coefficient << std::endl;
 			double amountModifierPercent = GetDoubleFromNode(AmountModPerc, tickNode);
 			double stdHealthMin = GetDoubleFromNode(StdHMin, tickNode);
 			double stdHealthMax = GetDoubleFromNode(StdHMax, tickNode);
