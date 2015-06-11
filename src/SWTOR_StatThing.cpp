@@ -8,12 +8,23 @@
 
 #include <iostream>
 #include <json/json.h>
+#include <pugixml.hpp>
 
-using namespace std;
+#define Virulence "xml_files/sniper/virulence.xml"
 
 int main()
 {
+	pugi::xml_document doc;
+	doc.load_file(Virulence);
+	pugi::xml_node abilities = doc.child("abilities");
 
-	cout << "!!!Hello World!_!!" << endl; // prints !!!Hello World!!!
+	if (!abilities)
+		return 1;
+
+	for (pugi::xml_node it = abilities.first_child(); it; it = it.next_sibling())
+	{
+		std::cout << it.child_value("name") << std::endl;
+	}
+
 	return 0;
 }
