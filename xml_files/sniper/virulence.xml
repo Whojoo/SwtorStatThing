@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<baseArmorPenetration>0</baseArmorPenetration>
 <abilities parse="http://parsely.io/parser/view/25661">
-	<baseArmorPenetration>0</baseArmorPenetration>
 	<!-- Only the values between tags is used. Attributes are for readability. -->
 	<!-- All Tech/Force abilities have an amountModifierPercent of -1. -->
 	<!-- multiplierAdditive need to be written as full percentage. -->
