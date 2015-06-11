@@ -2,12 +2,12 @@
 	"gear_levels": [
 		{
 			"level": 192,
-			"main": 4802390,
-			"secundairy": 4238907432,
-			"tertiary": 4892374,
+			"main": 2652,
+			"secundairy": 1724,
+			"tertiary": 1110,
 			"mod":
 			{
-				"main": 111,
+				"main": 97,
 				"secundairy": 82
 			},
 			"enhancement":
@@ -17,13 +17,52 @@
 			},
 			"implant":
 			{
-				"main": 111,
-				"secundairy": 162,
+				"main": 221,
+				"secundairy": 156,
 				"tertiary": 111
+			},
+			"armoring": 124,
+			"relic": 48,
+			"mainhand":
+			{
+				"power": 1395,
+				"sniper":
+				{
+					"min": 886,
+					"max": 1083
+				},
+				"blaster_rifle":
+				{
+					"min": 656,
+					"max": 984
+				},
+				"blaster_pistol":
+				{
+					"min": 574,
+					"max": 1066
+				},
+				"assault_cannon":
+				{
+					"min": 689,
+					"max": 1280
+				},
+				"dual_bladed_lightsaber":
+				{
+					"min": 788,
+					"max": 1181
+				},
+				"lightsaber":
+				{
+					"min": 656,
+					"max": 984
+				},
 			}
 		},
 		{
 			"level": 198,
+			"main": 2925,
+			"secundairy": 1818,
+			"tertiary": 1200,
 			"mod":
 			{
 				"main": 111,
@@ -31,15 +70,65 @@
 			},
 			"enhancement":
 			{
-				"secundairy": 74,
-				"tertiary": 111
+				"secundairy": 81,
+				"tertiary": 120
 			},
 			"implant":
 			{
-				"main": 111,
-				"secundairy": 162,
-				"tertiary": 111
+				"main": 240,
+				"secundairy": 171,
+				"tertiary": 120
+			},
+			"armoring": 134,
+			"relic": 52,
+			"mainhand":
+			{
+				"power": 1395,
+				"sniper":
+				{
+					"min": 941,
+					"max": 1150
+				},
+				"blaster_rifle":
+				{
+					"min": 697,
+					"max": 1046
+				},
+				"blaster_pistol":
+				{
+					"min": 610,
+					"max": 1133
+				},
+				"assault_cannon":
+				{
+					"min": 732,
+					"max": 1359
+				},
+				"dual_bladed_lightsaber":
+				{
+					"min": 837,
+					"max": 1255
+				},
+				"lightsaber":
+				{
+					"min": 697,
+					"max": 1046
+				},
 			}
 		}
-	]
+	],
+	"stim": 
+	{
+		"main": 198,
+		"power": 81
+	},
+	"crystal": 41,
+	"num_armoring": 9,
+	"num_mod": 9,
+	"num_enhancement": 7,
+	"num_crystal": 2,
+	"num_implant": 3,
+	"num_relic": 2,
+	"main_base": 550,
+	"secundairy_base": 116
 }
