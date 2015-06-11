@@ -10,21 +10,14 @@
 #include <json/json.h>
 #include <pugixml.hpp>
 
+#include "functions.h"
+#include "XmlConstants.h"
+
 #define Virulence "xml_files/sniper/virulence.xml"
 
 int main()
 {
-	pugi::xml_document doc;
-	doc.load_file(Virulence);
-	pugi::xml_node abilities = doc.child("abilities");
-
-	if (!abilities)
-		return 1;
-
-	for (pugi::xml_node it = abilities.first_child(); it; it = it.next_sibling())
-	{
-		std::cout << it.child_value("name") << std::endl;
-	}
+	Start(Virulence);
 
 	return 0;
 }
