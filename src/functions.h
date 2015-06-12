@@ -34,6 +34,8 @@ extern void Start(const char* aPath, const char* aDiciplineName, eWeaponType wea
  */
 extern abilityVec LoadAbilities(pugi::xml_node aParentNode);
 
+extern void LoadGearJson();
+
 extern inline double GetDoubleFromNode(const char* aNodeName, pugi::xml_node& aParentNode);
 extern inline int GetIntFromNode(const char* aNodeName, pugi::xml_node& aParentNode);
 

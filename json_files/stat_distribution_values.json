@@ -3,26 +3,16 @@
 		{
 			"level": 192,
 			"main": 2652,
-			"secundairy": 1724,
-			"tertiary": 1110,
-			"mod":
+			"secundairy":
 			{
-				"main": 97,
-				"secundairy": 82
+				"mod": 82,
+				"enhancement": 74,
+				"implant": 156,
+				"relic": 48
 			},
-			"enhancement":
-			{
-				"secundairy": 74,
-				"tertiary": 111
-			},
-			"implant":
-			{
-				"main": 221,
-				"secundairy": 156,
-				"tertiary": 111
-			},
-			"armoring": 124,
-			"relic": 48,
+			"tertiary_enhancement": 111,
+			"augment_available": 12,
+			"enhancement_available": 4,
 			"mainhand":
 			{
 				"power": 1395,
@@ -61,26 +51,20 @@
 		{
 			"level": 198,
 			"main": 2925,
-			"secundairy": 1818,
-			"tertiary": 1200,
-			"mod":
+			"secundairy":
 			{
-				"main": 111,
-				"secundairy": 82
+				"mod": 90,
+				"enhancement": 74,
+				"implant": 171,
+				"relic": 52
 			},
-			"enhancement":
+			"tertiary":
 			{
-				"secundairy": 81,
-				"tertiary": 120
+				"enhancement": 120,
+				"implant": 120
 			},
-			"implant":
-			{
-				"main": 240,
-				"secundairy": 171,
-				"tertiary": 120
-			},
-			"armoring": 134,
-			"relic": 52,
+			"augment_available": 13,
+			"enhancement_available": 4,
 			"mainhand":
 			{
 				"power": 1395,
@@ -122,13 +106,6 @@
 		"main": 198,
 		"power": 81
 	},
-	"crystal": 41,
-	"num_armoring": 9,
-	"num_mod": 9,
-	"num_enhancement": 7,
-	"num_crystal": 2,
-	"num_implant": 3,
-	"num_relic": 2,
 	"main_base": 550,
 	"secundairy_base": 116
 }

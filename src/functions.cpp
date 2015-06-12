@@ -5,11 +5,15 @@
  *      Author: Robin
  */
 
-#include "functions.h"
 
 #include <pugixml.hpp>
+#include <json/json.h>
+#include <iostream>
+#include <fstream>
 
+#include "functions.h"
 #include "XmlConstants.h"
+#include "JsonConstants.h"
 
 void Start(const char* aPath, const char* aDiciplineName, eWeaponType weapon)
 {
@@ -19,7 +23,8 @@ void Start(const char* aPath, const char* aDiciplineName, eWeaponType weapon)
 	//Load all the abilities.
 	abilityVec list = LoadAbilities(doc.child(Abilities));
 
-
+	//Load the json for stat distribution values.
+	LoadGearJson();
 }
 
 abilityVec LoadAbilities(pugi::xml_node aParentNode)
@@ -71,6 +76,19 @@ abilityVec LoadAbilities(pugi::xml_node aParentNode)
 	}
 
 	return list;
+}
+
+void LoadGearJson()
+{
+	Json::Value root;
+	Json::Reader reader;
+	std::ifstream fileInput;
+	fileInput.open(StatDistributionPath, std::ifstream::binary);
+
+	if (reader.parse(fileInput, root, false))
+		std::cout << reader.getFormattedErrorMessages() << std::endl;
+
+	std::cout << root.get("gear_levels", 10)[0].get("level", 0).asInt();
 }
 
 inline double GetDoubleFromNode(const char* aNodeName, pugi::xml_node& aParentNode)
