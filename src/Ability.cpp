@@ -7,7 +7,7 @@
 
 #include "Ability.h"
 
-sAbilityTick* sAbility::First()
+AbilityTick* Ability::First()
 {
 	if (ticks)
 	{
@@ -21,33 +21,41 @@ sAbilityTick* sAbility::First()
 	}
 }
 
-sAbilityTick* sAbility::Next()
+AbilityTick* Ability::Next()
 {
 	if (ticks && ++currentTick < numOfTicks)
+	{
 		return ticks + currentTick;
+	}
 	else
+	{
 		return 0x0;
+	}
 }
 
-sAbilityTick* sAbility::Previous()
+AbilityTick* Ability::Previous()
 {
 	if (ticks && --currentTick >= 0)
+	{
 		return ticks + currentTick;
+	}
 	else
+	{
 		return 0x0;
+	}
 }
 
-void sAbility::AddTick(sAbilityTick tick)
+void Ability::AddTick(AbilityTick tick)
 {
 	if (!ticks)
 	{
-		ticks = new sAbilityTick[1];
+		ticks = new AbilityTick[1];
 		numOfTicks = 0; //Gets upped later.
 	}
 	else
 	{
 		//Put in temporary and fill it.
-		sAbilityTick* temp = new sAbilityTick[numOfTicks + 1];
+		AbilityTick* temp = new AbilityTick[numOfTicks + 1];
 		for (int i = 0; i < numOfTicks; i++)
 		{
 			temp[i] = ticks[i];

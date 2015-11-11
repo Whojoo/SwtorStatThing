@@ -17,6 +17,7 @@ const char* GetWeaponString(eWeaponType weaponType)
 		case eWeapon_Blaster_Rifle: return "blaster_rifle";
 		case eWeapon_Dual_Bladed_Lightsaber: return "dual_bladed_lightsaber";
 		case eWeapon_Lightsaber: return "lightsaber";
-		default: return "ERROR: Don't know weapon type.";
 	}
+
+	return "none";
 }

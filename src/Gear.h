@@ -8,13 +8,15 @@
 #ifndef GEAR_H_
 #define GEAR_H_
 
-//Equipment constants.
-#define ImplantCount 3
-#define EnhancementCount 7
-#define ModCount 9
-#define ArmoringCount 9
-#define RelicCount 2
-#define CrystalCount 2
+enum eNumberOfGearSlots
+{
+	eNumberOfGearSlots_Implants = 3,
+	eNumberOfGearSlots_Enhancements = 7,
+	eNumberOfGearSlots_Mods = 9,
+	eNumberOfGearSlots_Armorings = 9,
+	eNumberOfGearSlots_Relics = 2,
+	eNumberOfGearSlots_Crystals = 2
+};
 
 //The different gear levels.
 enum eGearLevel
@@ -35,24 +37,27 @@ enum eWeaponType
 
 extern const char* GetWeaponString(eWeaponType weaponType);
 
-struct sWeapon
+struct Weapon
 {
 	double average;
 
-	sWeapon(int aMin, int aMax) : average((double)(aMin + (double)(aMax - aMin) * 0.5)) { }
-	sWeapon() : sWeapon(0, 0) { }
+	Weapon(int min, int max) : average((double)(min + (double)(max - min) * 0.5)) { }
+	Weapon() : Weapon(0, 0) { }
 };
 
-struct sGear
+
+//TODO: Character sheet? -Robin
+//TODO: Change according to 4.0 mastery changes. -Robin
+struct Gear
 {
-	sWeapon weapon;
+	Weapon weapon;
 	int main;
 	int secundairy;
 	int tertiary;
 	int rest;
 	int crystals;
 
-	sGear(int aMain, int aSecundairy, int tertiary);
+	Gear(int main, int secundairy, int tertiary);
 };
 
 #endif /* GEAR_H_ */

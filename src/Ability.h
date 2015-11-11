@@ -8,7 +8,11 @@
 #ifndef ABILITY_H_
 #define ABILITY_H_
 
-struct sAbilityTick
+
+/**
+ * Struct which contains the information required for each damage tick.
+ */
+struct AbilityTick
 {
 	const char* name;
 	double coefficient;
@@ -22,50 +26,59 @@ struct sAbilityTick
 
 	/**
 	 * Creates an ability damage tick. Some abilities have different damage values or types and these ticks support that.
-	 * \param aName name of the ability for debug purposes.
-	 * \param aCoef coefficient of this tick.
-	 * \param aAmountModifierPercent the amountModifierPercent, this constructor adds 1 to it.
-	 * \param aStdHealthMin stdHealthMin for this tick.
-	 * \param aStdHealthMax stdHealthMax for this tick.
-	 * \param aAddMult all additive multipliers added together. This constructor converts it from x% to 1.x
-	 * \param aMultiMult all the multiplicative multipliers multiplied together.
-	 * \param aCritBonus crit bonus for this tick.
-	 * \param aSurgeBonus surge bonus for this tick.
-	 * \param aArmorPen armor penetration for this tick.
+	 * @param name 					- name of the ability for debug purposes.
+	 * @param coef 				 	- coefficient of this tick.
+	 * @param amountModifierPercent - the amountModifierPercent, this constructor adds 1 to it.
+	 * @param stdHealthMin			- stdHealthMin for this tick.
+	 * @param stdHealthMax 		 	- stdHealthMax for this tick.
+	 * @param addMult 				- all additive multipliers added together. This constructor converts it from x% to 1.x
+	 * @param multiMult 			- all the multiplicative multipliers multiplied together.
+	 * @param critBonus			 	- crit bonus for this tick.
+	 * @param surgeBonus			- surge bonus for this tick.
+	 * @param armorPen 			 	- armor penetration for this tick.
 	 */
-	sAbilityTick(const char* aName, double aCoef, double aAmountModifierPercent, double aStdHealthMin, double aStdHealthMax, int aAddMult,
-			double aMuliMult, double aCritBonus, int aSurgeBonus, int aArmorPen) :
-				name(aName), coefficient(aCoef),
-					amountModifier(1 + aAmountModifierPercent), stdHealthAverage(aStdHealthMin + (aStdHealthMax - aStdHealthMin) * 0.5),
-					additiveMultiplier(1 + ((double)aAddMult * 0.01)), multiplicativeMultiplier(aMuliMult), critBonus(aCritBonus), surgeBonus(aSurgeBonus),
-					armorPenetration(aArmorPen) { }
+	AbilityTick(const char* name, double coef, double amountModifierPercent, double stdHealthMin, double stdHealthMax, int addMult,
+			double multiMult, double critBonus, int surgeBonus, int armorPen) :
+				name(name), coefficient(coef),
+					amountModifier(1 + amountModifierPercent), stdHealthAverage(stdHealthMin + (stdHealthMax - stdHealthMin) * 0.5),
+					additiveMultiplier(1 + ((double)addMult * 0.01)), multiplicativeMultiplier(multiMult), critBonus(critBonus), surgeBonus(surgeBonus),
+					armorPenetration(armorPen) { }
 
 	/**
 	 * Default constructor so we can use this in an array.
 	 * Values filled in so I get rid of these annoying 'not initialized' warning.
 	 */
-	sAbilityTick() : name("ERROR"), coefficient(0), amountModifier(0), stdHealthAverage(0), additiveMultiplier(0),
+	AbilityTick() : name("ERROR"), coefficient(0), amountModifier(0), stdHealthAverage(0), additiveMultiplier(0),
 			multiplicativeMultiplier(0), critBonus(0), surgeBonus(0), armorPenetration(0) { }
 };
 
-struct sAbility
+/**
+ * Struct which contains basic ability information and each damage tick of the ability.
+ */
+struct Ability
 {
 	double contribution;
 	double cooldown;
 	const char* name;
 
-	sAbilityTick* First();
-	sAbilityTick* Next();
-	sAbilityTick* Previous();
-	void AddTick(sAbilityTick tick);
+	AbilityTick* First();
+	AbilityTick* Next();
+	AbilityTick* Previous();
+	void AddTick(AbilityTick tick);
 
-	sAbility(double aContribution, double aCooldown, const char* aName) : contribution(aContribution), cooldown(aCooldown), name(aName),
+	/**
+	 * @param contribution - The total contribution this ability has represented as a double from 0 to 100.
+	 * @param cooldown	   - The cooldown of the ability in seconds.
+	 * @param name		   - The name of the ability.
+	 */
+	Ability(double contribution, double cooldown, const char* name) : contribution(contribution), cooldown(cooldown), name(name),
 			numOfTicks(-1), currentTick(-1), ticks(0x0) { }
 
 private:
+	//Logic for ability tick iteration.
 	int numOfTicks;
 	int currentTick;
-	sAbilityTick* ticks;
+	AbilityTick* ticks;
 };
 
 #endif /* ABILITY_H_ */

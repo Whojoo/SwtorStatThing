@@ -38,6 +38,7 @@
  * }
  */
 
+//TODO: Create like XmlConstants.h
 
 #define GearLevel "gear_levels"
 #define Resurrected 0

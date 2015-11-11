@@ -19,24 +19,24 @@ namespace pugi
 } /* namespace pugi */
 
 //Typedef for ability vector.
-struct sAbility;
-typedef std::vector<sAbility> abilityVec;
+struct Ability;
+typedef std::vector<Ability> abilityVec;
 
 /**
  * Starts the program for a certain xml file path.
  * \param aPath path to the xml file.
  */
-extern void Start(const char* aPath, const char* aDiciplineName, eWeaponType weapon);
+extern void Start(const char* path, const char* diciplineName, eWeaponType weapon);
 
 /**
  * Loads the abilities into a std::vector
  * \param aParentNode the <abilities> node.
  */
-extern abilityVec LoadAbilities(pugi::xml_node aParentNode);
+extern abilityVec LoadAbilities(pugi::xml_node parentNode);
 
 extern void LoadGearJson();
 
-extern inline double GetDoubleFromNode(const char* aNodeName, pugi::xml_node& aParentNode);
-extern inline int GetIntFromNode(const char* aNodeName, pugi::xml_node& aParentNode);
+extern inline double GetDoubleFromNode(const char* nodeName, pugi::xml_node& parentNode);
+extern inline int GetIntFromNode(const char* aNodeName, pugi::xml_node& parentNode);
 
 #endif /* FUNCTIONS_H_ */
